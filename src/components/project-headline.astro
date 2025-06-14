@@ -1,0 +1,43 @@
+---
+interface Props {
+    href: string;
+    title: string;
+    description: string;
+    tags?: string[];
+}
+
+const { href, title, description, tags = [] }: Props = Astro.props;
+---
+
+<style lang="scss">
+    .tags {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 0.5rem;
+    }
+    .tag {
+        color: $bg_color;
+        background-color: $text_color;
+        padding: 4px 8px;
+        padding-block: 4px;
+        padding-inline: 8px;
+    }
+    h3 a::after {
+        content: " ↗";
+    }
+</style>
+
+<article>
+    <h3><a {href}>{title}</a></h3>
+    <p>{description}</p>
+    {
+        tags.length > 0 && (
+            <ul class="tags">
+                {tags.map((tag) => (
+                    <li class="tag">{tag}</li>
+                ))}
+            </ul>
+        )
+    }
+</article>

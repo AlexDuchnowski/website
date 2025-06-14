@@ -1,11 +1,32 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectHeadline from "../components/project-headline.astro";
 ---
 
-<BaseLayout>
-    <h1>Welcome to My Astro Project</h1>
-    <p>This is the home page of your Astro project.</p>
-    <p>Explore the site and enjoy the content!</p>
+<style lang="scss">
+    h1 {
+        padding-bottom: 4px;
+        padding-block-end: 4px;
+    }
+    h2 {
+        padding-bottom: 2px;
+        padding-block-end: 2px;
+    }
+</style>
 
-    <a href="/projects/blah">This is the BLAH Project</a>
+<BaseLayout>
+    <div class="centered">
+        <div class="wrapper">
+            <h1>Whatup</h1>
+            <p>TEST</p>
+
+            <h2>Projects</h2>
+            <ProjectHeadline
+                href="/projects/rubiks-group"
+                title="Rubiks Group"
+                description="This is a sample project headline component."
+                tags={["Astro", "Component", "Example"]}
+            />
+        </div>
+    </div>
 </BaseLayout>

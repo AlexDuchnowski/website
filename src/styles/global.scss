@@ -1,0 +1,25 @@
+@use "./_variables.scss" as *;
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    .wrapper {
+        width: 100%;
+        max-width: $max_width;
+    }
+}
+
+a {
+    text-decoration: underline;
+    &:hover,&:focus {
+        color: rebeccapurple;
+    }
+    &:active {
+        color: darkorange;
+    }
+}
