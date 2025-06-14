@@ -1,0 +1,111 @@
+// SCSS file containing CSS style resets
+// used in routes/+layout.svelte
+
+/* ============================================
+RESET
+============================================ */
+
+/* Box sizing rules */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+* {
+    /* remove webkit tap highlighting */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+
+    /* make fonts render more consistently */
+    -webkit-font-smoothing: none;
+
+    /* remove default focus outline */
+    &:focus {
+        outline: none;
+    }
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+input {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+
+    &[type="number"] {
+        // hide spin box on Firefox
+        -moz-appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        // hide spin box on WebKit (Chrome & Safari)
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+select {
+    appearance: none;
+    width: 100%;
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    outline: none;
+    
+    cursor: inherit;
+}
+
+ol, ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
