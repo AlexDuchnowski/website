@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Headline from "../components/Headline.astro";
+---
+
+<BaseLayout title="Alex Duchnowski - Papers">
+    <div class="centered">
+        <div class="wrapper">
+            <h1>Papers</h1>
+            <h2>These are the research papers I've collaborated on.</h2>
+            <Headline
+                href="https://arxiv.org/abs/2406.13803"
+                title="LLMs as Models for Analogical Reasoning"
+                description="TODO"
+                tags={["NLP", "Psycholinguistics"]}
+            />
+        </div>
+    </div>
+</BaseLayout>

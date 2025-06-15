@@ -12,19 +12,16 @@ const { href, title, description, tags = [] }: Props = Astro.props;
 <style lang="scss">
     .tags {
         list-style: none;
-        padding: 0;
+        padding-top: 2px;
         display: flex;
         gap: 0.5rem;
     }
     .tag {
-        color: $bg_color;
-        background-color: $text_color;
-        padding: 4px 8px;
-        padding-block: 4px;
-        padding-inline: 8px;
-    }
-    h3 a::after {
-        content: " ↗";
+        color: $color_dark;
+        background-color: $color_light;
+        padding: 3px 6px;
+        padding-block: 3px;
+        padding-inline: 6px;
     }
 </style>
 

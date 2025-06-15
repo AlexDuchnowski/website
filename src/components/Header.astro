@@ -1,0 +1,42 @@
+---
+
+---
+
+<style lang="scss">
+    header {
+        width: 100%;
+        padding-top: 4px;
+        padding-block-start: 4px;
+        padding-bottom: 4px;
+        padding-block-end: 4px;
+        background-color: $color_dark;
+        a {
+            color: $color_light;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    ul.row {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 10ch;
+        padding: 0;
+    }
+</style>
+
+<header>
+    <div class="centered">
+        <ul class="row">
+            <li><a href="/">Home</a></li>
+            <li><a href="/papers">Papers</a></li>
+            <li><a href="/projects">Projects</a></li>
+        </ul>
+    </div>
+</header>

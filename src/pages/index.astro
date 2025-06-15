@@ -1,32 +1,36 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectHeadline from "../components/project-headline.astro";
+import Headline from "../components/Headline.astro";
 ---
 
-<style lang="scss">
-    h1 {
-        padding-bottom: 4px;
-        padding-block-end: 4px;
-    }
-    h2 {
-        padding-bottom: 2px;
-        padding-block-end: 2px;
-    }
-</style>
-
-<BaseLayout>
+<BaseLayout title="Alex Duchnowski - Home">
     <div class="centered">
         <div class="wrapper">
-            <h1>Whatup</h1>
-            <p>TEST</p>
-
-            <h2>Projects</h2>
-            <ProjectHeadline
-                href="/projects/rubiks-group"
-                title="Rubiks Group"
-                description="This is a sample project headline component."
-                tags={["Astro", "Component", "Example"]}
-            />
+            <h1>Alex Duchnowski</h1>
+            <p>
+                Hi, I'm Alex, and I love solving puzzles. I studied mathematics,
+                computer science, and linguistics at Brown University. While at
+                Brown, I developed an interest in computational linguistics.
+            </p>
+            <p>TODO: FINISH THIS SECTION</p>
+            <section>
+                <h2><a class="internal" href="papers">Papers</a></h2>
+                <Headline
+                    href="https://arxiv.org/abs/2406.13803"
+                    title="LLMs as Models for Analogical Reasoning"
+                    description="TODO"
+                    tags={["NLP", "Psycholinguistics"]}
+                />
+            </section>
+            <section>
+                <h2><a class="internal" href="projects">Projects</a></h2>
+                <Headline
+                    href="/projects/rubiks-group"
+                    title="Rubiks Group"
+                    description="TODO"
+                    tags={["Rubik's cube", "Lean 4"]}
+                />
+            </section>
         </div>
     </div>
 </BaseLayout>

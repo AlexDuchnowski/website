@@ -2,12 +2,6 @@
 layout: ../../layouts/ProjectLayout.astro
 ---
 
-# This is a test file
+# Rubiks Group
 
-## Is this a different size?
-
-It should have been...
-
-Here's another paragraph.
-
-And another.
+TODO: FILL THIS IN

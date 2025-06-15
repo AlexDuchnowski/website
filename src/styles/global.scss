@@ -2,6 +2,47 @@
 
 body {
     font-family: Inter, sans-serif;
+    background-color: $color_darkest;
+    color: $color_light;
+}
+
+section {
+    padding-top: 8px;
+    padding-block-start: 8px;
+    padding-bottom: 8px;
+    padding-block-end: 8px;
+}
+
+h1 {
+    padding-top: 8px;
+    padding-block-start: 8px;
+    padding-bottom: 8px;
+    padding-block-end: 8px;
+}
+
+h3 {
+    padding-top: 2px;
+    padding-block-start: 2px;
+    padding-bottom: 2px;
+    padding-block-end: 2px;
+}
+
+a {
+    color: $color_accent;
+    &:hover,&:focus {
+        color: $color_accent;
+        text-decoration: underline;
+    }
+    &:active {
+        color: $color_light;
+        text-decoration: underline;
+    }
+}
+a.internal::after {
+    content: " →";
+}
+a.external::after {
+    content: " ↗";
 }
 
 .centered {
@@ -11,15 +52,5 @@ body {
     .wrapper {
         width: 100%;
         max-width: $max_width;
-    }
-}
-
-a {
-    text-decoration: underline;
-    &:hover,&:focus {
-        color: rebeccapurple;
-    }
-    &:active {
-        color: darkorange;
     }
 }
