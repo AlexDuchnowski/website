@@ -2,8 +2,8 @@
 
 body {
     font-family: Inter, sans-serif;
-    background-color: $color_darkest;
-    color: $color_light;
+    background-color: $color_bg;
+    color: $color_text;
 }
 
 section {
@@ -34,7 +34,8 @@ a {
         text-decoration: underline;
     }
     &:active {
-        color: $color_light;
+        color: $color_text;
+        background-color: $color_accent;
         text-decoration: underline;
     }
 }

@@ -1,6 +1,20 @@
-$color_darkest : #001524;
-$color_dark : #15616d;
-$color_light : #ffecd1;
-$color_accent : #ff7d00;
+// $color_darkest : #001524;
+// $color_dark : #15616d;
+// $color_light : #ffecd1;
+// $color_accent : #ff7d00;
+
+// $color_darkest : #000000;
+// $color_dark : #000000;
+// $color_darkest : #14213d;
+// $color_dark : #14213d;
+// $color_light : #e5e5e5; 
+// $color_accent : #fca311;
+
+$color_dark : #393e41;
+$color_light : #f6f7eb;
+$color_accent : #e94f37;
+
+$color_bg : $color_light;
+$color_text : $color_dark;
 
 $max_width : 60ch;

@@ -1,12 +1,13 @@
 ---
 interface Props {
     href: string;
+    source?: string;
     title: string;
     description: string;
     tags?: string[];
 }
 
-const { href, title, description, tags = [] }: Props = Astro.props;
+const { href, source, title, description, tags = [] }: Props = Astro.props;
 ---
 
 <style lang="scss">
@@ -17,8 +18,8 @@ const { href, title, description, tags = [] }: Props = Astro.props;
         gap: 0.5rem;
     }
     .tag {
-        color: $color_dark;
-        background-color: $color_light;
+        color: $color_bg;
+        background-color: $color_text;
         padding: 3px 6px;
         padding-block: 3px;
         padding-inline: 6px;
@@ -26,7 +27,7 @@ const { href, title, description, tags = [] }: Props = Astro.props;
 </style>
 
 <article>
-    <h3><a {href}>{title}</a></h3>
+    <h3><a class={source} {href}>{title}</a></h3>
     <p>{description}</p>
     {
         tags.length > 0 && (
