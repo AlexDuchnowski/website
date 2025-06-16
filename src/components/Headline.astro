@@ -11,9 +11,16 @@ const { href, source, title, description, tags = [] }: Props = Astro.props;
 ---
 
 <style lang="scss">
+    article {
+        padding-top: 4px;
+        padding-block-start: 4px;
+        padding-bottom: 4px;
+        padding-block-end: 4px;
+    }
     .tags {
         list-style: none;
         padding-top: 2px;
+        padding-block-start: 2px;
         display: flex;
         gap: 0.5rem;
     }

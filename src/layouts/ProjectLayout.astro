@@ -1,10 +1,27 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+    frontmatter: {
+        title: string;
+        githubURL?: string;
+    };
+}
+
+const { title, githubURL } = Astro.props.frontmatter;
 ---
 
-<BaseLayout>
+<BaseLayout {title}>
     <div class="centered">
         <div class="wrapper">
+            <h1>{title}</h1>
+            {
+                githubURL ? (
+                    <a href={githubURL} class="external">
+                        GitHub
+                    </a>
+                ) : null
+            }
             <slot />
         </div>
     </div>

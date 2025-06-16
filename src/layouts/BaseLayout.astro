@@ -21,11 +21,13 @@ const { title }: Props = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <title>Alex Duchnowski | {title}</title>
     </head>
     <body>
         <Header />
-        <slot />
+        <div class="content">
+            <slot />
+        </div>
         <Footer />
     </body>
 </html>
