@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import portraitImage from "../images/Duchnowski_Portrait.jpg";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -7,9 +10,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="wrapper">
             <div class="container">
                 <h1>Alex Duchnowski</h1>
-                <img
-                    src="src/images/Duchnowski_Portrait.jpg"
-                    alt="Portrait Photo of Alex Duchnowski"
+                <Image
+                    src={portraitImage}
+                    alt="Portrait of Alex Duchnowski"
+                    loading="eager"
                     style="width: 200px; height: auto;"
                 />
             </div>
