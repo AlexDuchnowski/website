@@ -8,35 +8,43 @@ import Headline from "../components/Headline.astro";
         <div class="wrapper">
             <h1>Research</h1>
             <h2>These are the research papers I've collaborated on.</h2>
-            <Headline
-                href="https://arxiv.org/abs/2505.15490"
-                source="external"
-                title="Collaborative Problem-Solving in an Optimization Game"
-                description="TODO"
-                tags={[
-                    "LLM Agents",
-                    "Traveling Salesman Problem",
-                    "Game Theory",
-                ]}
-            />
-            <Headline
-                href="https://coli-saar.github.io/ehop"
-                source="external"
-                title="EHOP: A Dataset of Everyday NP-hard Optimization Problems"
-                description="TODO"
-                tags={[
-                    "Generalization",
-                    "LLM Reasoning",
-                    "Neurosymbolic Methods",
-                ]}
-            />
-            <Headline
-                href="https://arxiv.org/abs/2406.13803"
-                source="external"
-                title="LLMs as Models for Analogical Reasoning"
-                description="TODO"
-                tags={["LLM Reasoning", "Psycholinguistics"]}
-            />
+            <ul>
+                <li>
+                    <Headline
+                        href="https://arxiv.org/abs/2505.15490"
+                        source="external"
+                        title="Collaborative Problem-Solving in an Optimization Game"
+                        description="TODO"
+                        tags={[
+                            "LLM Agents",
+                            "Traveling Salesman Problem",
+                            "Game Theory",
+                        ]}
+                    />
+                </li>
+                <li>
+                    <Headline
+                        href="https://coli-saar.github.io/ehop"
+                        source="external"
+                        title="EHOP: A Dataset of Everyday NP-hard Optimization Problems"
+                        description="TODO"
+                        tags={[
+                            "Generalization",
+                            "LLM Reasoning",
+                            "Neurosymbolic Methods",
+                        ]}
+                    />
+                </li>
+                <li>
+                    <Headline
+                        href="https://arxiv.org/abs/2406.13803"
+                        source="external"
+                        title="LLMs as Models for Analogical Reasoning"
+                        description="TODO"
+                        tags={["LLM Reasoning", "Psycholinguistics"]}
+                    />
+                </li>
+            </ul>
         </div>
     </div>
 </BaseLayout>

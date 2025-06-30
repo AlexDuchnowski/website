@@ -1,6 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Headline from "../../components/Headline.astro";
+
+const projects = Object.values(
+    import.meta.glob("/src/pages/projects/*.md", { eager: true })
+);
 ---
 
 <BaseLayout title="Projects">
@@ -11,20 +15,33 @@ import Headline from "../../components/Headline.astro";
                 These are a variety of things I've worked on—some for academic
                 purposes, and some just for fun.
             </h2>
-            <Headline
-                href="/projects/rubiks-group"
-                source="internal"
-                title="Rubiks Group"
-                description="TODO"
-                tags={["Rubik's cube", "Lean 4"]}
-            />
-            <Headline
-                href="/projects/lockbox"
-                source="internal"
-                title="Lockbox"
-                description="TODO"
-                tags={["Puzzle", "Python"]}
-            />
+            <ul>
+                {
+                    projects.map((project) => {
+                        const { title, description, tags } =
+                            project.frontmatter;
+                        return (
+                            <li>
+                                <Headline
+                                    href={
+                                        "/projects/" +
+                                        project.file
+                                            .split("\\")
+                                            .pop()
+                                            .split("/")
+                                            .pop()
+                                            .replace(/\.md$/, "")
+                                    }
+                                    source="internal"
+                                    title={title}
+                                    description={description}
+                                    tags={tags}
+                                />
+                            </li>
+                        );
+                    })
+                }
+            </ul>
         </div>
     </div>
 </BaseLayout>
