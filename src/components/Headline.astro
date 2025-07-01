@@ -17,11 +17,16 @@ const { href, source, title, description, tags = [] }: Props = Astro.props;
         padding-bottom: 4px;
         padding-block-end: 4px;
     }
+    p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
     .tags {
         list-style: none;
         padding-top: 2px;
         padding-block-start: 2px;
         display: flex;
+        flex-wrap: wrap;
         gap: 0.5rem;
     }
     .tag {
@@ -30,6 +35,7 @@ const { href, source, title, description, tags = [] }: Props = Astro.props;
         padding: 3px 6px;
         padding-block: 3px;
         padding-inline: 6px;
+        white-space: nowrap;
     }
 </style>
 

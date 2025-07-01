@@ -8,14 +8,49 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="About">
     <div class="centered">
         <div class="wrapper">
-            <div class="container">
-                <h1>Alex Duchnowski</h1>
+            <div class="centered">
                 <Image
                     src={portraitImage}
                     alt="Portrait of Alex Duchnowski"
                     loading="eager"
-                    style="width: 200px; height: auto;"
+                    style="width: 15vw; height: auto;"
                 />
+                <h1>Alex Duchnowski</h1>
+                <div class="social-icons">
+                    <a
+                        href="https://www.linkedin.com/in/alex-duchnowski/"
+                        target="_blank"
+                        aria-label="LinkedIn"
+                    >
+                        <img
+                            src="/src/images/icons/linkedin.svg"
+                            alt="LinkedIn"
+                            class="icon"
+                        />
+                    </a>
+                    <a
+                        href="https://github.com/AlexDuchnowski"
+                        target="_blank"
+                        aria-label="GitHub"
+                    >
+                        <img
+                            src="/src/images/icons/github.svg"
+                            alt="GitHub"
+                            class="icon"
+                        />
+                    </a>
+                    <a
+                        href="https://scholar.google.com/citations?user=F3rFu8oAAAAJ&hl=en"
+                        target="_blank"
+                        aria-label="Google Scholar"
+                    >
+                        <img
+                            src="/src/images/icons/googlescholar.svg"
+                            alt="Google Scholar"
+                            class="icon"
+                        />
+                    </a>
+                </div>
             </div>
             <p>
                 Hi. I'm Alex, and I love solving puzzles. I studied mathematics,

@@ -34,6 +34,11 @@ h3 {
     padding-block-end: 2px;
 }
 
+p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 a {
     color: $color_accent;
     &:hover,&:focus {
@@ -58,9 +63,28 @@ li {
     margin-bottom: 4px;
 }
 
+.social-icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.15);
+}
+
 .content {
     margin-top : 50px;
     margin-bottom : 50px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .centered {
