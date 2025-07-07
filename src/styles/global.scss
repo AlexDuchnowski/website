@@ -42,12 +42,9 @@ p {
 a {
     color: $color_accent;
     &:hover,&:focus {
-        color: $color_accent;
         text-decoration: underline;
     }
     &:active {
-        color: $color_text;
-        background-color: $color_accent;
         text-decoration: underline;
     }
 }
@@ -59,8 +56,8 @@ a.external::after {
 }
 
 li {
-    margin-top: 4px;
-    margin-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .social-icons {
@@ -74,10 +71,14 @@ li {
     width: 32px;
     height: 32px;
     transition: transform 0.2s;
-}
-
-.icon:hover {
-    transform: scale(1.15);
+    &:hover {
+        transform: scale(1.2);
+        filter: brightness(0) saturate(100%) invert(29%) sepia(90%) saturate(2730%) hue-rotate(117deg) brightness(99%) contrast(104%);
+    }
+    &:active {
+        transform: scale(1.1);
+        filter: brightness(0) saturate(100%) invert(29%) sepia(90%) saturate(2730%) hue-rotate(117deg) brightness(99%) contrast(104%);
+    }
 }
 
 .content {
@@ -95,14 +96,4 @@ li {
         width: 100%;
         max-width: $max_width;
     }
-}
-
-.container {
-    display: flex;
-    // align-items: last baseline;
-    align-items: center;
-    justify-content: left;
-    column-gap: 6ch;
-    padding-bottom: 8px;
-    padding-block-end: 8px;
 }

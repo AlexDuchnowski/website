@@ -1,6 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Headline from "../components/Headline.astro";
+
+const research = Object.values(
+    import.meta.glob("/src/research_content/*.md", { eager: true })
+);
 ---
 
 <BaseLayout title="Research">
@@ -9,41 +13,23 @@ import Headline from "../components/Headline.astro";
             <h1>Research</h1>
             <p>TODO: Describe research interests/goals</p>
             <ul>
-                <li>
-                    <Headline
-                        href="https://arxiv.org/abs/2505.15490"
-                        source="external"
-                        title="Collaborative Problem-Solving in an Optimization Game"
-                        description="TODO"
-                        tags={[
-                            "LLM Agents",
-                            "Traveling Salesman Problem",
-                            "Game Theory",
-                        ]}
-                    />
-                </li>
-                <li>
-                    <Headline
-                        href="https://coli-saar.github.io/ehop"
-                        source="external"
-                        title="EHOP: A Dataset of Everyday NP-hard Optimization Problems"
-                        description="TODO"
-                        tags={[
-                            "Generalization",
-                            "LLM Reasoning",
-                            "Neurosymbolic Methods",
-                        ]}
-                    />
-                </li>
-                <li>
-                    <Headline
-                        href="https://arxiv.org/abs/2406.13803"
-                        source="external"
-                        title="LLMs as Models for Analogical Reasoning"
-                        description="TODO"
-                        tags={["LLM Reasoning", "Psycholinguistics"]}
-                    />
-                </li>
+                {
+                    research.map((project) => {
+                        const { href, title, description, tags } =
+                            project.frontmatter;
+                        return (
+                            <li>
+                                <Headline
+                                    href={href}
+                                    source="external"
+                                    title={title}
+                                    description={description}
+                                    tags={tags}
+                                />
+                            </li>
+                        );
+                    })
+                }
             </ul>
         </div>
     </div>

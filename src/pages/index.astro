@@ -3,9 +3,26 @@ import { Image } from "astro:assets";
 import portraitImage from "../images/Duchnowski_Portrait.jpg";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Headline from "../components/Headline.astro";
+
+import * as research_sample from "../research_content/ehop.md";
+const research_content = {
+    href: research_sample.frontmatter.href,
+    title: research_sample.frontmatter.title,
+    description: research_sample.frontmatter.description,
+    tags: research_sample.frontmatter.tags,
+};
+
+import * as project_sample from "../pages/projects/rubiks-group.md";
+const project_content = {
+    href: project_sample.frontmatter.href,
+    title: project_sample.frontmatter.title,
+    description: project_sample.frontmatter.description,
+    tags: project_sample.frontmatter.tags,
+};
 ---
 
-<BaseLayout title="About">
+<BaseLayout title="Home">
     <div class="centered">
         <div class="wrapper">
             <div class="centered">
@@ -13,51 +30,51 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     src={portraitImage}
                     alt="Portrait of Alex Duchnowski"
                     loading="eager"
-                    style="width: 15vw; height: auto;"
+                    style="width: 40%; height: auto; margin-top: 12px;"
                 />
                 <h1>Alex Duchnowski</h1>
-                <div class="social-icons">
-                    <a
-                        href="https://www.linkedin.com/in/alex-duchnowski/"
-                        target="_blank"
-                        aria-label="LinkedIn"
-                    >
-                        <img
-                            src="/src/images/icons/linkedin.svg"
-                            alt="LinkedIn"
-                            class="icon"
-                        />
-                    </a>
-                    <a
-                        href="https://github.com/AlexDuchnowski"
-                        target="_blank"
-                        aria-label="GitHub"
-                    >
-                        <img
-                            src="/src/images/icons/github.svg"
-                            alt="GitHub"
-                            class="icon"
-                        />
-                    </a>
-                    <a
-                        href="https://scholar.google.com/citations?user=F3rFu8oAAAAJ&hl=en"
-                        target="_blank"
-                        aria-label="Google Scholar"
-                    >
-                        <img
-                            src="/src/images/icons/googlescholar.svg"
-                            alt="Google Scholar"
-                            class="icon"
-                        />
-                    </a>
-                </div>
             </div>
+            <h2>About Me</h2>
             <p>
-                Hi. I'm Alex, and I love solving puzzles. I studied mathematics,
-                computer science, and linguistics at Brown University. While at
-                Brown, I developed an interest in computational linguistics.
+                I am a computational linguist who loves solving puzzles. I
+                studied mathematics, computer science, and linguistics at Brown
+                University.
             </p>
             <p>TODO: FINISH THIS SECTION</p>
+            <div style="display: flex; justify-content: space-between">
+                <h2>Research</h2>
+                <h3>
+                    <a href="/research">View All</a>
+                </h3>
+            </div>
+            {
+                (
+                    <Headline
+                        href={research_content.href}
+                        source="external"
+                        title={research_content.title}
+                        description={research_content.description}
+                        tags={research_content.tags}
+                    />
+                )
+            }
+            <div style="display: flex; justify-content: space-between">
+                <h2>Projects</h2>
+                <h3>
+                    <a href="/projects">View All</a>
+                </h3>
+            </div>
+            {
+                (
+                    <Headline
+                        href={project_content.href}
+                        source="internal"
+                        title={project_content.title}
+                        description={project_content.description}
+                        tags={project_content.tags}
+                    />
+                )
+            }
         </div>
     </div>
 </BaseLayout>

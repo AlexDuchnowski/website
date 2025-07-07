@@ -4,14 +4,10 @@
 
 <style lang="scss">
     footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        border-top: 2px solid $color_text;
-        padding-top: 4px;
-        padding-block-start: 4px;
-        padding-bottom: 4px;
-        padding-block-end: 4px;
+        padding-top: 16px;
+        padding-block-start: 16px;
+        padding-bottom: 16px;
+        padding-block-end: 16px;
         background-color: $color_bg;
         a {
             font-weight: 600;
@@ -30,19 +26,40 @@
 
 <footer>
     <div class="centered">
-        <ul class="row">
-            <li>
-                <a
-                    class="external"
-                    href="https://www.linkedin.com/in/alex-duchnowski/"
-                    >LinkedIn</a
-                >
-            </li>
-            <li>
-                <a class="external" href="https://github.com/AlexDuchnowski"
-                    >GitHub</a
-                >
-            </li>
-        </ul>
+        <div class="social-icons">
+            <a
+                href="https://www.linkedin.com/in/alex-duchnowski/"
+                target="_blank"
+                aria-label="LinkedIn"
+            >
+                <img
+                    src="/src/images/icons/linkedin.svg"
+                    alt="LinkedIn"
+                    class="icon"
+                />
+            </a>
+            <a
+                href="https://github.com/AlexDuchnowski"
+                target="_blank"
+                aria-label="GitHub"
+            >
+                <img
+                    src="/src/images/icons/github.svg"
+                    alt="GitHub"
+                    class="icon"
+                />
+            </a>
+            <a
+                href="https://scholar.google.com/citations?user=F3rFu8oAAAAJ&hl=en"
+                target="_blank"
+                aria-label="Google Scholar"
+            >
+                <img
+                    src="/src/images/icons/googlescholar.svg"
+                    alt="Google Scholar"
+                    class="icon"
+                />
+            </a>
+        </div>
     </div>
 </footer>

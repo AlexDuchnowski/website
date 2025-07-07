@@ -10,6 +10,8 @@
         border-bottom: 2px solid $color_text;
         padding-top: 4px;
         padding-block-start: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
         padding-bottom: 4px;
         padding-block-end: 4px;
         background-color: $color_bg;
@@ -22,22 +24,31 @@
                 text-decoration: underline;
             }
         }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
     }
 
     ul.row {
         list-style: none;
         display: flex;
         justify-content: center;
-        // gap: 10vw;
-        gap: 6ch;
+        gap: 10vw;
+        // gap: 6ch;
         padding: 0;
     }
 </style>
 
 <header>
-    <div class="centered">
+    <div class="centered container">
         <ul class="row">
-            <li><a href="/">About</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/research">Research</a></li>
             <li><a href="/projects">Projects</a></li>
         </ul>
