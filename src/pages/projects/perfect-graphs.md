@@ -13,6 +13,25 @@ description: A video explaining the concept of perfect graphs and some mathemati
     }
 </style>
 
-<iframe src="https://www.youtube.com/embed/fnE81FLHfcc?si=w8Cq3bq7gXH9oCmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+The final project for my Graph Theory course was to create a video explaining a graph theory concept. My partner and I chose to explain perfect graphs.
 
-Animations were created using Python and the [Manim](https://www.manim.community) library.
+Having grown up watching math videos from channels like [3Blue1Brown](https://www.youtube.com/@3blue1brown), [Vi Hart](https://vimeo.com/vihart), and [Numberphile](https://www.youtube.com/@numberphile), I wanted to create a video that was engaging and visually appealing. I discovered that 3Blue1Brown had a public animation library called [manim](https://github.com/3b1b/manim) and that there was a [community edition](https://github.com/ManimCommunity/manim) with [documentation](https://docs.manim.community/en/stable/reference/manim.mobject.graph.Graph.html#manim.mobject.graph.Graph) for animating graphs. With this tool, I was able to create scenes using Python code like the following, which creates the final scene of the video:
+
+```python
+class Threshold(Scene):
+    def construct(self):
+        G = Graph([], [])
+        self.add(G)
+        self.play(G.animate.add_vertices(1, labels=True, positions={1: [-2, -2, 0]}))
+        self.wait(3)
+        self.play(G.animate.add_vertices(2, labels=True, positions={2: [0, -2, 0]}))
+        self.wait(3)
+        self.play(G.animate.add_vertices(3, labels=True, positions={3: [0, 0, 0]}))
+        self.play(G.animate.add_edges(*[(3, v) for v in range(1, 3)]))
+        self.wait(5)
+        ...
+```
+
+This, along with a few helper functions for easily creating common types of graphs, made it easy to create clean animations that conveyed the concepts we wanted to explain.
+
+<iframe src="https://www.youtube.com/embed/fnE81FLHfcc?si=w8Cq3bq7gXH9oCmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

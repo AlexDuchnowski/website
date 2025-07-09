@@ -12,4 +12,10 @@ export default defineConfig({
             },
         },
     },
+    markdown: {
+        shikiConfig: {
+            // theme: "monokai",
+            theme: "material-theme-darker",
+        },
+    },
 });

@@ -22,4 +22,4 @@ To play the puzzle, you can click the "Ready to start !" text below and then int
 
 The puzzle is written in Python and uses the [Pygame](https://www.pygame.org) library. The code is available on [GitHub](https://github.com/AlexDuchnowski/Lockbox). Note that viewing the code will quickly reveal much of how the puzzle works.
 
-You can view an explanation/solution/spoiler on the [Brown Puzzle Hunt website](https://2024.brownpuzzlehunt.com/puzzle/lockbox/solution).
+An explanation/solution/spoiler can be found at [this page](https://2024.brownpuzzlehunt.com/puzzle/lockbox/solution) of the Brown Puzzle Hunt website.
