@@ -1,13 +1,19 @@
 ---
 interface Props {
-    href: string;
+    href?: string;
     source?: string;
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
     tags?: string[];
 }
 
-const { href, source, title, description, tags = [] }: Props = Astro.props;
+const {
+    href = "/",
+    source = "internal",
+    title = "",
+    description = "",
+    tags = [],
+}: Props = Astro.props;
 ---
 
 <style lang="scss">
@@ -19,7 +25,7 @@ const { href, source, title, description, tags = [] }: Props = Astro.props;
     }
     p {
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 2px;
     }
     .tags {
         list-style: none;

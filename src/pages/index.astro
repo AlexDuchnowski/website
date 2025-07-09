@@ -4,22 +4,41 @@ import portraitImage from "../images/Duchnowski_Portrait.jpg";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Headline from "../components/Headline.astro";
+import Footer from "../components/Footer.astro";
 
-import * as research_sample from "../research_content/ehop.md";
-const research_content = {
-    href: research_sample.frontmatter.href,
-    title: research_sample.frontmatter.title,
-    description: research_sample.frontmatter.description,
-    tags: research_sample.frontmatter.tags,
-};
+import type { MarkdownInstance } from "astro";
+interface Frontmatter {
+    href: string;
+    source?: string;
+    title: string;
+    description: string;
+    tags?: string[];
+}
 
-import * as project_sample from "../pages/projects/rubiks-group.md";
-const project_content = {
-    href: project_sample.frontmatter.href,
-    title: project_sample.frontmatter.title,
-    description: project_sample.frontmatter.description,
-    tags: project_sample.frontmatter.tags,
-};
+const featuredResearchName = "ehop";
+const featuredProjectName = "rubiks-group";
+
+const pathToResearch = `src/research_content/${featuredResearchName}.md`;
+const papers = Object.values(
+    import.meta.glob<MarkdownInstance<Frontmatter>>(
+        "/src/research_content/*.md",
+        { eager: true }
+    )
+);
+const featuredPaper = papers.find((paper) =>
+    paper.file.includes(pathToResearch)
+);
+
+const pathToProject = `src/pages/projects/${featuredProjectName}.md`;
+const projects = Object.values(
+    import.meta.glob<MarkdownInstance<Frontmatter>>(
+        "/src/pages/projects/*.md",
+        { eager: true }
+    )
+);
+const featuredProject = projects.find((project) =>
+    project.file.includes(pathToProject)
+);
 ---
 
 <BaseLayout title="Home">
@@ -36,11 +55,12 @@ const project_content = {
             </div>
             <h2>About Me</h2>
             <p>
-                I am a computational linguist who loves solving puzzles. I
-                studied mathematics, computer science, and linguistics at Brown
-                University.
+                I am a computational linguist who loves solving puzzles. I also
+                enjoy <i>creating</i> puzzles—both for people and for LLMs. I studied
+                mathematics, computer science, and linguistics at Brown University,
+                and I am currently looking for a full-time position where I can grow
+                my NLP skills and develop LLMs or LLM-based tools.
             </p>
-            <p>TODO: FINISH THIS SECTION</p>
             <div style="display: flex; justify-content: space-between">
                 <h2>Research</h2>
                 <h3>
@@ -50,11 +70,11 @@ const project_content = {
             {
                 (
                     <Headline
-                        href={research_content.href}
+                        href={featuredPaper?.frontmatter.href}
                         source="external"
-                        title={research_content.title}
-                        description={research_content.description}
-                        tags={research_content.tags}
+                        title={featuredPaper?.frontmatter.title}
+                        description={featuredPaper?.frontmatter.description}
+                        tags={featuredPaper?.frontmatter.tags}
                     />
                 )
             }
@@ -67,14 +87,15 @@ const project_content = {
             {
                 (
                     <Headline
-                        href={project_content.href}
+                        href="/projects/rubiks-group"
                         source="internal"
-                        title={project_content.title}
-                        description={project_content.description}
-                        tags={project_content.tags}
+                        title={featuredProject?.frontmatter.title}
+                        description={featuredProject?.frontmatter.description}
+                        tags={featuredProject?.frontmatter.tags}
                     />
                 )
             }
         </div>
     </div>
+    <Footer />
 </BaseLayout>

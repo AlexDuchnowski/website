@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 
 title: Space Piracy
 githubURL: https://github.com/AlexDuchnowski/SpacePiracy
-tags: ["Puzzle", "Typescript"]
+tags: ["Interactive", "Puzzle", "Python"]
 description: TODO
 ---
 

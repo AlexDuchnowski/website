@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 
 title: Reduplication in Movies
 githubURL: https://github.com/AlexDuchnowski/reduplication
-tags: ["Corpus Linguistics", "Data Science", "Course Final Project"]
+tags: ["Corpus Linguistics", "Data Science"]
 description: TODO
 ---
 
