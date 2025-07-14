@@ -4,7 +4,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: Perfect Graphs Video
 githubURL: https://github.com/AlexDuchnowski/PerfectGraphs
 tags: ["Graph Theory", "Python", "Manim"]
-description: A video explaining the concept of perfect graphs and some mathematical results about them.
+description: A video explaining the concept of perfect graphs and some mathematical results about them
 ---
 <style>
     iframe {
@@ -13,7 +13,7 @@ description: A video explaining the concept of perfect graphs and some mathemati
     }
 </style>
 
-The final project for my Graph Theory course was to create a video explaining a graph theory concept. My partner and I chose to explain perfect graphs.
+The final project for my Graph Theory course was to create a video explaining a graph theory concept. My partner and I chose to explain [perfect graphs](https://en.wikipedia.org/wiki/Perfect_graph).
 
 Having grown up watching math videos from channels like [3Blue1Brown](https://www.youtube.com/@3blue1brown), [Vi Hart](https://vimeo.com/vihart), and [Numberphile](https://www.youtube.com/@numberphile), I wanted to create a video that was engaging and visually appealing. I discovered that 3Blue1Brown had a public animation library called [manim](https://github.com/3b1b/manim) and that there was a [community edition](https://github.com/ManimCommunity/manim) with [documentation](https://docs.manim.community/en/stable/reference/manim.mobject.graph.Graph.html#manim.mobject.graph.Graph) for animating graphs. With this tool, I was able to create scenes using Python code like the following, which creates the final scene of the video:
 
@@ -32,6 +32,10 @@ class Threshold(Scene):
         ...
 ```
 
-This, along with a few helper functions for easily creating common types of graphs, made it easy to create clean animations that conveyed the concepts we wanted to explain.
+This, along with a few helper functions for procedurally creating common types of graphs, made it easy to create clean animations that conveyed the concepts we wanted to explain.
 
-<iframe src="https://www.youtube.com/embed/fnE81FLHfcc?si=w8Cq3bq7gXH9oCmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src="/src/images/PerfectGraphsStoryboard.jpg" alt="Perfect Graphs Video Storyboard" style="width: 80%; display: block; margin: 0 auto;"/>
+
+After determining the structure of the video with a storyboard, we were able to create the following video:
+
+<iframe loading="lazy" src="https://www.youtube.com/embed/fnE81FLHfcc?si=w8Cq3bq7gXH9oCmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

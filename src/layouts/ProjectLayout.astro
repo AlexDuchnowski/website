@@ -14,7 +14,7 @@ const { title, githubURL } = Astro.props.frontmatter;
 <BaseLayout {title}>
     <div class="centered">
         <div class="wrapper">
-            <h1>{title}</h1>
+            <h1 style="padding-bottom: 0px">{title}</h1>
             {
                 githubURL ? (
                     <a href={githubURL} class="external">

@@ -66,11 +66,34 @@ li {
     overflow: auto;
 }
 
+code {
+    font-family: "Cascadia Code", monospace;
+}
+
+blockquote {
+    border-left: 4px solid $color_text;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    color: $color_text;
+    background-color: $color_shade;
+    font-style: italic;
+}
+
+
 .social-icons {
     display: flex;
     gap: 16px;
     align-items: center;
     justify-content: center;
+}
+
+.spoiler {
+    color: $color_text !important;
+    background-color: $color_text !important;
+    &:hover {
+        color: $color_text !important;
+        background-color: $color_bg !important;
+    }
 }
 
 .icon {
