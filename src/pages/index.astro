@@ -67,7 +67,9 @@ const featuredProject = projects.find((project) =>
             <div style="display: flex; justify-content: space-between">
                 <h2>Featured Research</h2>
                 <h3>
-                    <a class="internal" href="/research">View All Research</a>
+                    <a class="internal" href="/website/research"
+                        >View All Research</a
+                    >
                 </h3>
             </div>
             {
@@ -84,13 +86,15 @@ const featuredProject = projects.find((project) =>
             <div style="display: flex; justify-content: space-between">
                 <h2>Featured Project</h2>
                 <h3>
-                    <a class="internal" href="/projects">View All Projects</a>
+                    <a class="internal" href="/website/projects"
+                        >View All Projects</a
+                    >
                 </h3>
             </div>
             {
                 (
                     <Headline
-                        href="/projects/rubiks-group"
+                        href={`/website/projects/${featuredProjectName}`}
                         source="internal"
                         title={featuredProject?.frontmatter.title}
                         description={featuredProject?.frontmatter.description}
