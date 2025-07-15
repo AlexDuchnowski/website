@@ -15,7 +15,7 @@ let inputs = [
 ];
 let container = document.getElementById("response-container");
 let inputBox = document.getElementById("guess");
-let errorColWidth = 60;
+let errorColWidth = 32;
 let resultColWidth = 16;
 let response = document.createElement("p");
 let defaultMessage =
@@ -30,13 +30,9 @@ function hexFunctionMachine(f) {
     return function (hex) {
         let result = f(parseInt(hex, 16));
         if (result % 1 != 0) {
-            throw new Error(
-                " ERROR: Transformation produced a non-integer result."
-            );
+            throw new Error(" ERROR: Non-Integer Result");
         } else if (result < 0) {
-            throw new Error(
-                " ERROR: Transformation produced a negative result."
-            );
+            throw new Error(" ERROR: Negative Result");
         }
         return result.toString(16).toUpperCase();
     };
