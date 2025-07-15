@@ -6,6 +6,11 @@ body {
     color: $color_text;
 }
 
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 section {
     padding-top: 8px;
     padding-block-start: 8px;
