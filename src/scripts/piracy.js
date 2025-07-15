@@ -221,3 +221,4 @@ function processGuess() {
     }
     // inputBox.value = '' // This clears the input field upon completion.
 }
+inputBox.addEventListener("change", () => processGuess(inputBox.value));

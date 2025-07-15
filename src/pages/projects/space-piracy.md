@@ -39,13 +39,12 @@ The puzzle is included below:
         <input
             type="text"
             id="guess"
-            onchange="processGuess()"
             placeholder="ENTER NUMBER HERE"
             size="20"
         />
         <br />
         <br />
-        <div id="response-container" style="max-width: 1000px;"></div>
+        <div id="response-container"></div>
     </center>
     <br />
 </div>
