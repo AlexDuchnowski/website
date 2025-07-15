@@ -14,7 +14,7 @@ interface Frontmatter {
 
 const projects = Object.values(
     import.meta.glob<MarkdownInstance<Frontmatter>>(
-        "/src/pages/projects/*.md*",
+        "/src/pages/projects/*.{md,mdx}",
         { eager: true }
     )
 );
@@ -44,7 +44,7 @@ const projects = Object.values(
                                             ?.pop()
                                             ?.split("/")
                                             ?.pop()
-                                            ?.replace(/\.md$/, "")
+                                            ?.replace(/\.mdx?$/, "")
                                     }
                                     source="internal"
                                     title={title}

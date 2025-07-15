@@ -6,12 +6,8 @@ githubURL: https://github.com/AlexDuchnowski/PerfectGraphs
 tags: ["Graph Theory", "Python", "Manim"]
 description: A video explaining the concept of perfect graphs and some mathematical results about them
 ---
-<style>
-    iframe {
-        width: 100%;
-        aspect-ratio: 16/9;
-    }
-</style>
+import { Image } from "astro:assets";
+import PerfectGraphsStoryboard from "/src/images/PerfectGraphsStoryboard.jpg";
 
 The final project for my Graph Theory course was to create a video explaining a graph theory concept. My partner and I chose to explain [perfect graphs](https://en.wikipedia.org/wiki/Perfect_graph).
 
@@ -34,8 +30,8 @@ class Threshold(Scene):
 
 This, along with a few helper functions for procedurally creating common types of graphs, made it easy to create clean animations that conveyed the concepts we wanted to explain.
 
-<img src="/src/images/PerfectGraphsStoryboard.jpg" alt="Perfect Graphs Video Storyboard" style="width: 80%; display: block; margin: 0 auto;"/>
+<Image src={PerfectGraphsStoryboard} alt="Perfect Graphs Video Storyboard" style="width: 80%; height: auto; display: block; margin: 0 auto;"/>
 
-After determining the structure of the video with a storyboard, we were able to create the following video:
+After collecting and organizing a set of concepts and fun facts surrounding perfect graphs, we determined the structure of the video with a storyboard. We were then able to create the following video (note that some background in graph theory is assumed):
 
-<iframe loading="lazy" src="https://www.youtube.com/embed/fnE81FLHfcc?si=w8Cq3bq7gXH9oCmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe loading="lazy" src="https://www.youtube.com/embed/fnE81FLHfcc?si=w8Cq3bq7gXH9oCmo" title="YouTube video player" frameborder="0" style="width: 100%; aspect-ratio: 16/9;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

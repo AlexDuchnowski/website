@@ -15,13 +15,13 @@ interface Frontmatter {
     tags?: string[];
 }
 
-const featuredResearchName = "ehop";
-const featuredProjectName = "rubiks-group";
+const featuredResearchName = "ehop.md";
+const featuredProjectName = "rubiks-group.mdx";
 
-const pathToResearch = `src/research_content/${featuredResearchName}.md`;
+const pathToResearch = `src/research_content/${featuredResearchName}`;
 const papers = Object.values(
     import.meta.glob<MarkdownInstance<Frontmatter>>(
-        "/src/research_content/*.md",
+        "/src/research_content/*.{md,mdx}",
         { eager: true }
     )
 );
@@ -29,10 +29,10 @@ const featuredPaper = papers.find((paper) =>
     paper.file.includes(pathToResearch)
 );
 
-const pathToProject = `src/pages/projects/${featuredProjectName}.md`;
+const pathToProject = `src/pages/projects/${featuredProjectName}`;
 const projects = Object.values(
     import.meta.glob<MarkdownInstance<Frontmatter>>(
-        "/src/pages/projects/*.md",
+        "/src/pages/projects/*.{md,mdx}",
         { eager: true }
     )
 );
@@ -94,7 +94,7 @@ const featuredProject = projects.find((project) =>
             {
                 (
                     <Headline
-                        href={`/website/projects/${featuredProjectName}`}
+                        href={`/website/projects/${featuredProjectName.split(".")[0]}`}
                         source="internal"
                         title={featuredProject?.frontmatter.title}
                         description={featuredProject?.frontmatter.description}

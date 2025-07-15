@@ -6,23 +6,10 @@ githubURL: https://github.com/AlexDuchnowski/rubiks-cube
 tags: ["Computer-Assisted Proofs", "Lean 4"]
 description: A representation of the Rubik's Cube and some computer-verified proofs about its properties
 ---
-
-<style>
-    ul {
-        padding-left: 1.5rem;
-        list-style-type: disc;
-    }
-    img {
-        width: 100%;
-    }
-    figure {
-        padding: 0.5rem;
-    }
-    figcaption {
-        padding: 0.5rem;
-        text-align: center;
-    }
-</style>
+import { Image } from "astro:assets";
+import RubiksPieceTypes from "/src/images/RubiksPieceTypes.svg";
+import RubiksOperation from "/src/images/RubiksOperation.svg";
+import RubiksCornerTwist from "/src/images/RubiksCornerTwist.png";
 
 ## Backstory
 
@@ -35,7 +22,7 @@ I discovered that this had been done before: there was a [GitHub repository](htt
 If you are familiar with a Rubik's Cube, you may already know that the cube is composed of three types of pieces: 6 center pieces, 12 edge pieces, and 8 corner pieces (see Figure 1). Additionally, the center pieces never move relative to each other. No matter how the cube is scrambled, their relative positions are always the same: the yellow, green, and red centers are on adjacent faces (as shown in Figure 1), and the green center is opposite the blue center, and so on. This is helpful when solving the cube, because we know that, for example, the face with the green center piece will be the green face when the cube is solved. For the purposes of representing the cube, this invariance is useful because it means that the state of the cube is completely determined by the positions of the edge and corner pieces (relative to the center pieces, which we can lock in place and then ignore).
 
 <figure>
-    <img src="/src/images/RubiksPieceTypes.svg" alt="Rubik's Cube Piece Types" style="width: 100%;"/>
+    <RubiksPieceTypes width="100%" height="auto"/>
     <figcaption>Figure 1: The Rubik's Cube and the three types of pieces that constitute it.</figcaption>
 </figure>
 
@@ -64,7 +51,7 @@ abbrev RubiksSuperType := CornerType × EdgeType
 Note that the state of the entire cube is simply defined as a combination of the states of the corner and edge pieces. This is close to the final representation we want, but I named this the `Rubiks`*`Super`*`Type` because it represents a *superset* of the states of the Rubik's Cube group. This representation allows for all possible states of the cube that could be achieved by taking the cube apart and putting it back together, but this includes states which one couldn't achieve with the standard moves of turning the faces of the cube. For example, it allows for states in which a single corner piece is twisted, as shown in Figure 2. This is impossible to arrive at (or solve) by only turning the faces of the cube because every turn of a face changes the orientation of the four corner pieces on that face in a way that is symmetric: the change in orientation of a corner piece is always mirrored by another corner piece on the face being turned, so it is impossible for a single corner to have an orientation of 1 while all others have an orientation of 0. Similarly, it is impossible to achieve a state in which a single edge piece is flipped.
 
 <figure>
-    <img src="/src/images/RubiksCornerTwist.png" alt="Rubik's Cube Corner Twist" style="width: 80%; display: block; margin: 0 auto;"/>
+    <Image src={RubiksCornerTwist} alt="Rubik's Cube Corner Twist" layout="full-width" style="display: block; margin: 0 auto;"/>
     <figcaption>Figure 2: A state of the Rubik's Cube in which a single corner piece is twisted.</figcaption>
 </figure>
 
@@ -88,7 +75,7 @@ Wikipedia [defines a group](https://en.wikipedia.org/wiki/Group_(mathematics)) a
 In the case of the Rubik's Cube group, the set is the set of all possible states of the cube. If we think of each state as being equivalent to a sequence of moves that turn a solved cube into the state, then the operation for combining two states is to simply chain together the sequences of moves for the two states being combined to produce the resulting state. For example, as shown in Figure 3, we can combine the state representing a single clockwise turn of the green face and the state representing a single clockwise turn of the red face to produce the state representing a single clockwise turn of the green face followed by a single clockwise turn of the red face.
 
 <figure>
-    <img src="/src/images/RubiksOperation.svg" alt="Rubik's Cube Composition Operation" style="width: 100%;"/>
+    <RubiksOperation width="100%" height="auto"/>
     <figcaption>Figure 3: An example of the composition operation for the Rubik's Cube group.</figcaption>
 </figure>
 
