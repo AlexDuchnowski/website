@@ -17,7 +17,7 @@ let container = document.getElementById("response-container");
 let inputBox = document.getElementById("guess");
 let errorColWidth = 32;
 let resultColWidth = 16;
-let response = document.createElement("p");
+let response = document.createElement("code");
 let defaultMessage =
     "Type a number in the field above and press Enter to make a guess.";
 response.innerText = defaultMessage;
@@ -138,11 +138,10 @@ function displayResults(guess) {
         hline +
         "|" +
         "\xa0".repeat(4) +
-        "|" +
-        " Errors/Warnings" +
-        "\xa0".repeat(errorColWidth - 16) +
         "| Result Overlap" +
         "\xa0".repeat(resultColWidth - 15) +
+        "| Errors/Warnings" +
+        "\xa0".repeat(errorColWidth - 16) +
         "|<br>" +
         hline;
     for (let i = 0; i < passwords.length; i++) {
@@ -155,7 +154,22 @@ function displayResults(guess) {
             " |";
         try {
             let transformed = transformations[i](guess);
-            // console.log(i + 1, transformed)
+            let [overlap, remainder] = passwordGuessOverlap(
+                passwords[i],
+                transformed
+            );
+            if (!overlap.includes("•") && remainder === "") {
+                response.innerHTML +=
+                    "<b><u style='color: green;'>" + overlap + "</u></b>";
+            } else {
+                response.innerHTML +=
+                    "<b><u style='color: coral;'>" + overlap + "</u></b>";
+                response.innerHTML += remainder;
+            }
+            response.innerHTML +=
+                "\xa0".repeat(
+                    resultColWidth - (overlap.length + remainder.length)
+                ) + "|";
             if (transformed.length != passwords[i].length) {
                 let message =
                     " WARNING: Result has length " +
@@ -171,31 +185,17 @@ function displayResults(guess) {
                     "\xa0".repeat(errorColWidth - 25) +
                     "|";
             }
-            let [overlap, remainder] = passwordGuessOverlap(
-                passwords[i],
-                transformed
-            );
-            if (!overlap.includes("•") && remainder === "") {
-                response.innerHTML +=
-                    "<b><u style='color: green;'>" + overlap + "</u></b>";
-            } else {
-                response.innerHTML +=
-                    "<b><u style='color: coral;'>" + overlap + "</u></b>";
-                response.innerHTML += remainder;
-            }
-            response.innerHTML += "\xa0".repeat(
-                resultColWidth - (overlap.length + remainder.length)
-            );
         } catch (error) {
             let m = error.message;
             response.innerHTML +=
+                "<span style='color: crimson;'>" +
+                "█".repeat(resultColWidth) +
+                "</span>|" +
                 m +
                 "\xa0".repeat(errorColWidth - m.length) +
-                "|<span style='color: crimson;'>" +
-                "█".repeat(resultColWidth) +
-                "</span>";
+                "|";
         }
-        response.innerHTML += "|<br>" + hline;
+        response.innerHTML += "<br>" + hline;
     }
 }
 function processGuess() {
