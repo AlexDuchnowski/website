@@ -127,9 +127,9 @@ function displayResults(guess) {
         "+" +
         "-".repeat(4) +
         "+" +
-        "-".repeat(errorColWidth) +
-        "+" +
         "-".repeat(resultColWidth) +
+        "+" +
+        "-".repeat(errorColWidth) +
         "+<br>";
     response.innerHTML +=
         "Results for " +

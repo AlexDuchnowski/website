@@ -14,7 +14,9 @@ description: A multicolored maze where you have control over the maze's layout
     }
 </style>
 
-I created the Lockbox puzzle for the [2024 Brown Puzzle Hunt](https://2024.brownpuzzlehunt.com). The puzzle was designed for the final round of the hunt, so it is meant to take more than a few minutes to solve (exact solve times will vary depending on the solver's familiarity with certain puzzles). As with all puzzles in a puzzle hunt, the "solution" to the puzzle is a word or phrase. In this case, the solution word is simply displayed on the screen when the interactive puzzle is solved.
+I created the Lockbox puzzle for the [2024 Brown Puzzle Hunt](https://2024.brownpuzzlehunt.com). The puzzle was designed for the final round of the hunt, so it is meant to take more than a few minutes to solve (exact solve times will vary depending on the solver's familiarity with certain puzzles).
+
+As with all puzzles in a puzzle hunt, the "solution" to the puzzle is a word or phrase. In this case, the solution word is simply displayed on the screen when the interactive puzzle is solved.
 
 To play the puzzle, you can click the "Ready to start !" text below and then interact using your keyboard (the puzzle is currently not playable on mobile devices). The puzzle is also available on [itch.io](https://xenonhawk.itch.io/lockbox) and on the [Brown Puzzle Hunt website](https://2024.brownpuzzlehunt.com/puzzle/lockbox).
 
