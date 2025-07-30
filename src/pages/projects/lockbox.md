@@ -4,7 +4,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: Lockbox
 githubURL: https://github.com/AlexDuchnowski/Lockbox
 tags: ["Interactive", "Puzzle", "Python"]
-description: A multicolored maze where you have control over the maze's layout
+description: A multicolored maze game where you have control over the maze's layout
 ---
 
 <style>

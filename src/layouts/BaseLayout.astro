@@ -4,9 +4,10 @@ import Footer from "../components/Footer.astro";
 
 interface Props {
     title: string;
+    description?: string;
 }
 
-const { title }: Props = Astro.props;
+const { title, description }: Props = Astro.props;
 ---
 
 <style lang="scss" is:global>
@@ -22,6 +23,8 @@ const { title }: Props = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/website/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
+        <meta name="author" content="Alex Duchnowski" />
+        {description ? <meta name="description" content={description} /> : null}
         <title>Alex Duchnowski | {title}</title>
     </head>
     <body>

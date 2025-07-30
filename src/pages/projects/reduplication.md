@@ -4,7 +4,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: Part of Speech and the Semantic Contribution of Reduplication
 githubURL: https://github.com/AlexDuchnowski/reduplication
 tags: ["Corpus Linguistics", "Data Science", "R"]
-description: An analysis of the uses of reduplication in movie dialogues
+description: An analysis of the uses and meanings of reduplication in movie dialogues
 ---
 
 As our final project for our Corpus Linguistics course, my group decided to analyze the use of reduplication (a linguistic phenomenon where a word is repeated) in movie dialogues.
